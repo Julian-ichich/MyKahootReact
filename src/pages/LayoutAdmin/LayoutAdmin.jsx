@@ -14,13 +14,14 @@ const LayoutAdmin = () => {
             <div className='container pt-5'>
                 <div className='container d-flex justify-content-end'>
                     <Link className='btn  btn-outline-primary' to={'/create'}>
+                    <i class="bi bi-file-earmark-plus-fill me-1"></i>
                         Crear Test
                     </Link>
 
                 </div>
-                <div className='container d-flex flex-column justify-content-center'>
+                <div className='container d-flex flex-column justify-content-center bg-black pt-1 mt-1'>
 
-                    <Table responsive>
+                    <Table  responsive>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -42,7 +43,7 @@ const LayoutAdmin = () => {
                                         <td>{examen.autor}</td>
                                         <td>{examen.preguntas.length}</td>
                                         <td>{examen.codigo}</td>
-                                        <td> <Button onClick={() => CopyLink(examen.codigo)} variant="outline-success">Copy link</Button>{' '} </td>
+                                        <td> <Button onClick={() => CopyLink(examen.codigo)} variant="outline-success"><i class="bi bi-copy me-1"></i>Copy link</Button>{' '} </td>
                                     </tr>
                                 ))
                             }

@@ -15,6 +15,7 @@ const CreateTest = () => {
                 <h1 className='text-center'>Crear una Evaluacion</h1>
                 <Button variant="success" className='me-3' >
                     <NavLink to={'/'} className='list-group-item'>
+                    <i class="bi bi-house-door-fill me-1"></i>
                         Home
                     </NavLink>
                 </Button>
@@ -63,11 +64,12 @@ const CreateTest = () => {
                         <Row>
                             <Col className='d-flex justify-content-end mb-2'>
                                 <Button variant="success" className='me-3' onClick={handleSubmit(handleCreateTest)} >
-
+                                <i class="bi bi-floppy-fill me-1"></i>
                                     Guardar cambios
 
                                 </Button>
                                 <Button variant="primary" onClick={handleShow}>
+                                <i class="bi bi-file-earmark-plus-fill me-1"></i>
                                     Crear Pregunta
                                 </Button>
                             </Col>
@@ -75,7 +77,7 @@ const CreateTest = () => {
 
                         </Row>
 
-                        <Table bordered>
+                        <Table bordered responsive>
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -94,7 +96,7 @@ const CreateTest = () => {
                                         <td>{`${pregunta.respuesta1} === ${pregunta.respuesta2} === ${pregunta.respuesta3} === ${pregunta.respuesta4}`}</td>
                                         <td>{pregunta.respuestaCorrecta}</td>
                                         <td>
-                                            <Button variant="outline-danger" onClick={() => handleDelete(pregunta.id)}>Eliminar</Button>{' '}
+                                            <Button variant="outline-danger" onClick={() => handleDelete(pregunta.id)}><i class="bi bi-trash3-fill me-1"></i>Eliminar</Button>{' '}
                                         </td>
                                     </tr>
                                 ))}
@@ -108,7 +110,7 @@ const CreateTest = () => {
 
 
 
-                <Modal show={show} onHide={handleClose}>
+                <Modal show={show} onHide={handleClose} responsive>
                     <Modal.Header closeButton>
                         <Modal.Title>Crear Pregunta</Modal.Title>
                     </Modal.Header>

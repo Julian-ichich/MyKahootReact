@@ -44,7 +44,7 @@ const Temporizador = () => {
                 </div>
             </div>
             <div className="w-100 d-flex justify-content-center">
-                <p className="w-25 text-center fs-1 text-white bg-black rounded-5 p-2">{`${hours}  :  ${minutes}  :  ${seconds}`}</p>
+                <p className="w-50 text-center fs-1 text-white bg-black rounded-5 p-2">{`${hours}  :  ${minutes}  :  ${seconds}`}</p>
             </div>
 
         </div>
