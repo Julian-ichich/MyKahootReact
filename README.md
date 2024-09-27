@@ -1,8 +1,8 @@
-# React + Vite
+# MyKahoot 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es un proyecto con react, react-router-dom, y react-hook-form, de un quiz tipo Kahoot, apartando las paginas del usuario y el admin.
 
-Currently, two official plugins are available:
+![alt text](layoutAdmin.png)
+![alt text](LayoutCliente.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://mykahoot-main.netlify.app
