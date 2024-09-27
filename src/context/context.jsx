@@ -6,9 +6,7 @@ export const KahootContext = createContext()
 const KahootProvider = ({ children }) => {
     //uso del layoutAdmin
     const [mostrar, setMostrar] = useState()
-    useEffect(() => {
-        setMostrar(JSON.parse(localStorage.getItem('tests')))
-    }, [])
+    
 
     const CopyLink = (code) => {
         navigator.clipboard.writeText(`${window.location}game/${code}`)
@@ -110,6 +108,13 @@ const KahootProvider = ({ children }) => {
         }
     }
 
+    const handleDeleteExam=(codigo)=>{
+        const filter = mostrar.filter((item)=> item.codigo !== codigo)
+        localStorage.setItem('tests', JSON.stringify(filter))
+        setMostrar(filter)
+
+    }
+
 
 
     return (
@@ -137,7 +142,9 @@ const KahootProvider = ({ children }) => {
             handleDelete,
             onChangeText,
             handleCreateTest,
-            CopyLink
+            CopyLink,
+            setMostrar,
+            handleDeleteExam
    
         }}>
             {children}

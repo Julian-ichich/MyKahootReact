@@ -6,15 +6,18 @@ import { KahootContext } from '../../context/context';
 
 
 const LayoutAdmin = () => {
-    const { mostrar, CopyLink } = useContext(KahootContext)
+    const { mostrar, CopyLink, setMostrar, handleDeleteExam } = useContext(KahootContext)
 
+    useEffect(() => { 
+        setMostrar(JSON.parse(localStorage.getItem('tests')))
+    },[])
 
     return (
         <>
             <div className='container pt-5'>
                 <div className='container d-flex justify-content-end'>
                     <Link className='btn  btn-outline-primary' to={'/create'}>
-                    <i class="bi bi-file-earmark-plus-fill me-1"></i>
+                    <i className="bi bi-file-earmark-plus-fill me-1"></i>
                         Crear Test
                     </Link>
 
@@ -43,7 +46,7 @@ const LayoutAdmin = () => {
                                         <td>{examen.autor}</td>
                                         <td>{examen.preguntas.length}</td>
                                         <td>{examen.codigo}</td>
-                                        <td> <Button onClick={() => CopyLink(examen.codigo)} variant="outline-success"><i class="bi bi-copy me-1"></i>Copy link</Button>{' '} </td>
+                                        <td> <Button onClick={() => CopyLink(examen.codigo)} variant="outline-success"><i className="bi bi-copy me-1"></i>Copy link</Button>{' '} <Button onClick={() => handleDeleteExam(examen.codigo)} variant="outline-danger"><i className="bi bi-trash3-fill me-1" ></i>Delete</Button>{' '} </td>
                                     </tr>
                                 ))
                             }
